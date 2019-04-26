@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>Tests and Coverage</title>
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Tests and Coverage</h1>
+<h4 class="date"><em>25 April, 2019 09:04:28</em></h4>
+
+
+
+<!--- Placeholder for tests/README.md Do Not Edit--->
+<ul>
+<li><a href="#coverage">Coverage</a></li>
+<li><a href="#unit-tests">Unit Tests</a></li>
+</ul>
+<p>This output is created by <a href="https://github.com/metrumresearchgroup/covrpage">covrpage</a>.</p>
+<div id="coverage" class="section level2">
+<h2>Coverage</h2>
+<p>Coverage summary is created using the <a href="https://github.com/r-lib/covr">covr</a> package.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Object</th>
+<th align="center">Coverage (%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">whereami</td>
+<td align="center">35.76</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/R/breadcrumb.R">R/breadcrumb.R</a></td>
+<td align="center">0.00</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/R/counter.R">R/counter.R</a></td>
+<td align="center">21.74</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/R/print.R">R/print.R</a></td>
+<td align="center">41.38</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/R/thisfile.R">R/thisfile.R</a></td>
+<td align="center">41.46</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/R/whereami.R">R/whereami.R</a></td>
+<td align="center">44.74</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/R/utils.R">R/utils.R</a></td>
+<td align="center">100.00</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+</div>
+<div id="unit-tests" class="section level2">
+<h2>Unit Tests</h2>
+<p>Unit Test summary is created using the <a href="https://github.com/r-lib/testthat">testthat</a> package.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">file</th>
+<th align="right">n</th>
+<th align="right">time</th>
+<th align="right">error</th>
+<th align="right">failed</th>
+<th align="right">skipped</th>
+<th align="right">warning</th>
+<th align="left">icon</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-console.R">test-console.R</a></td>
+<td align="right">2</td>
+<td align="right">0.013</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R">test-counter.R</a></td>
+<td align="right">11</td>
+<td align="right">0.070</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-source.R">test-source.R</a></td>
+<td align="right">3</td>
+<td align="right">0.051</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-thisfile.R">test-thisfile.R</a></td>
+<td align="right">4</td>
+<td align="right">0.022</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="left">🔶</td>
+</tr>
+</tbody>
+</table>
+<details open>
+<p><summary> Show Detailed Test Results </summary></p>
+<table>
+<colgroup>
+<col width="39%"></col>
+<col width="16%"></col>
+<col width="30%"></col>
+<col width="5%"></col>
+<col width="1%"></col>
+<col width="3%"></col>
+<col width="3%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">file</th>
+<th align="left">context</th>
+<th align="left">test</th>
+<th align="left">status</th>
+<th align="right">n</th>
+<th align="right">time</th>
+<th align="left">icon</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-console.R#L8">test-console.R</a></td>
+<td align="left">console functionality</td>
+<td align="left">console functionality: class</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.012</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-console.R#L12">test-console.R</a></td>
+<td align="left">console functionality</td>
+<td align="left">console functionality: value</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.001</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L7">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: no counter exists</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.001</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L13">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: initial</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.022</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L17">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: check counter was created</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.001</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L21">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: counter name</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.002</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L25">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: counter bump</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.020</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L29">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: counter state</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.002</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L33">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: cat_whereami</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.018</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L37_L38">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: multiple counter states</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.002</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L42">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: multiple counter names</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.001</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L47">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: reset item</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.001</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-counter.R#L52">test-counter.R</a></td>
+<td align="left">counter functionality</td>
+<td align="left">counter flow: reset all</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.000</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-source.R#L7">test-source.R</a></td>
+<td align="left">source functionality</td>
+<td align="left">source calls: direct call</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.015</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-source.R#L11">test-source.R</a></td>
+<td align="left">source functionality</td>
+<td align="left">source calls: path expand</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.014</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-source.R#L15">test-source.R</a></td>
+<td align="left">source functionality</td>
+<td align="left">source calls: print</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.022</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-thisfile.R#L7">test-thisfile.R</a></td>
+<td align="left">thisfile</td>
+<td align="left">thisfile works with source</td>
+<td align="left">SKIPPED</td>
+<td align="right">1</td>
+<td align="right">0.001</td>
+<td align="left">🔶</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-thisfile.R#L13">test-thisfile.R</a></td>
+<td align="left">thisfile</td>
+<td align="left">thisfile works with Rscript</td>
+<td align="left">SKIPPED</td>
+<td align="right">1</td>
+<td align="right">0.000</td>
+<td align="left">🔶</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-thisfile.R#L21">test-thisfile.R</a></td>
+<td align="left">thisfile</td>
+<td align="left">thisfile works with R</td>
+<td align="left">SKIPPED</td>
+<td align="right">1</td>
+<td align="right">0.000</td>
+<td align="left">🔶</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/yonicd/whereami/tree/master/tests/testthat/test-thisfile.R#L31_L35">test-thisfile.R</a></td>
+<td align="left">thisfile</td>
+<td align="left">thisfile works with knitr</td>
+<td align="left">PASS</td>
+<td align="right">1</td>
+<td align="right">0.021</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Failed</th>
+<th align="left">Warning</th>
+<th align="left">Skipped</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">🛑</td>
+<td align="left">⚠️</td>
+<td align="left">🔶</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<p><summary> Session Info </summary></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Field</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Version</td>
+<td align="left">R version 3.5.1 (2018-07-02)</td>
+</tr>
+<tr class="even">
+<td align="left">Platform</td>
+<td align="left">x86_64-apple-darwin15.6.0 (64-bit)</td>
+</tr>
+<tr class="odd">
+<td align="left">Running</td>
+<td align="left">macOS 10.14.4</td>
+</tr>
+<tr class="even">
+<td align="left">Language</td>
+<td align="left">en_US</td>
+</tr>
+<tr class="odd">
+<td align="left">Timezone</td>
+<td align="left">America/New_York</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Package</th>
+<th align="left">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">testthat</td>
+<td align="left">2.0.1</td>
+</tr>
+<tr class="even">
+<td align="left">covr</td>
+<td align="left">3.2.1</td>
+</tr>
+<tr class="odd">
+<td align="left">covrpage</td>
+<td align="left">0.0.70</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!--- Final Status : skipped/warning --->
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
