@@ -1,10 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/whereami)](https://cran.r-project.org/package=whereami)
+[![](https://cranlogs.r-pkg.org/badges/whereami)](https://cran.r-project.org/package=whereami)
 [![Travis build
-status](https://travis-ci.org/yonicd/whereami.svg?branch=master)](https://travis-ci.org/yonicd/whereami)[![Coverage
-status](https://codecov.io/gh/yonicd/whereami/branch/master/graph/badge.svg)](https://codecov.io/github/yonicd/whereami?branch=master)[![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_04_25-yellowgreen.svg)](http://tinyurl.com/y5c5voy3)
+status](https://travis-ci.org/yonicd/whereami.svg?branch=master)](https://travis-ci.org/yonicd/whereami)
+[![Coverage
+status](https://codecov.io/gh/yonicd/whereami/branch/master/graph/badge.svg)](https://codecov.io/github/yonicd/whereami?branch=master)
+[![Covrpage
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_05_05-yellowgreen.svg)](http://tinyurl.com/y5c5voy3)
 
 # whereami<img src="https://github.com/yonicd/whereami/raw/media/hex/whereami_small.png" align="right" />
 
@@ -21,8 +25,6 @@ remotes::install_github("yonicd/whereami")
 ``` r
 library(whereami)
 library(ggplot2)
-#> Need help? Try Stackoverflow:
-#> https://stackoverflow.com/tags/ggplot2.
 ```
 
 ### General
