@@ -1,5 +1,5 @@
 ---
-title: "cat_where"
+title: "Printing"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{cat_where}
@@ -10,8 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "figures/"
+  comment = "#>"
 )
 ```
 
@@ -36,4 +35,12 @@ cat_where(whereami(), color = "green")
 cat_where(whereami(), type = "line", color = "yellow")
 ```
 
-![](cat_where.png)
+```{r,echo = FALSE}
+if(file.exists('../reference/figures/printing.png')){
+  knitr::include_graphics('../reference/figures/printing.png')
+}else{
+  knitr::include_graphics('../man/figures/printing.png')
+}
+  
+```
+

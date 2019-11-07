@@ -4,59 +4,82 @@
 \alias{counter_state}
 \alias{counter_reset}
 \alias{counter_names}
+\alias{counter_tags}
+\alias{counter_get}
 \title{whereami counter}
 \usage{
-counter_state(item = NULL)
+counter_state(item = NULL, tag = NULL)
 
-counter_reset(item = NULL)
+counter_reset(item = NULL, tag = NULL)
 
 counter_names()
+
+counter_tags()
+
+counter_get()
 }
 \arguments{
 \item{item}{character, name of the counter to access, Default: NULL}
+
+\item{tag}{character, tag of the counter to acces, if it was set at initial whereami call.
+This can be used instead of the item name, Default: NULL}
 }
 \description{
 Interact with internal whereami counter
 }
 \details{
-counter_names returns names of the active stored counters.
+\code{counter_names()} returns names of the active stored counters.
 
-counter_state returns current hit count for item, if NULL then all counters
+\code{counter_state()} returns current hit count for item, if NULL then all counters
 are returned.
 
-counter_reset will remove counter of item, if item is NULL then all counters
+\code{counter_reset()} will remove counter of item, if item is NULL then all counters
 are reset.
+
+\code{counter_get()} returns a table with all the counters. These can then
+be plotted with the with the plot method.
+
+A json log of the counter is written to file.path(tempdir(),'whereami.json') by default
+The path can be set using \link[whereami:set_whereami_log]{set_whereami_log}
 }
 \examples{
 
-if( interactive() ){
+if(interactive()){
+
+txt <- "
+whereami::cat_where(whereami::whereami(tag = 'tag1'))
+"
 
 tf <- tempfile(fileext = '.R')
 
-# call to write to temp file
-f <- 'whereami::cat_where(whereami::whereami())'
-
-# write to the file (call at line 3)
-cat('\\n\\n',f,sep='',file = tf)
+cat(txt,file = tf)
 
 source(tf)
 
 counter_state()
 
+counter_state(tag = 'tag1')
+
 counter_names()
 
-# using counter_reset and counter_names in a loop
+counter_tags()
 
-for( i in 1:10 ){
+counters <- counter_get()
 
-  source(tf)
+counters
 
-  if( counter_state(counter_names()[1]) > 5 )
-    counter_reset(counter_names()[1])
-}
+plot(counter_get())
+
+# read the json log
+jsonlite::read_json(
+file.path(tempdir(),'whereami.json'),
+simplifyVector = TRUE)
 
 # clear all counters
 counter_reset()
+
+#verify that there are no active counters
+counter_state()
 
 # cleanup
 unlink(tf)

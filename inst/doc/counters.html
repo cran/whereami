@@ -13,17 +13,8 @@
 
 
 
-<title>Tables</title>
+<title>Counters</title>
 
-<script>$(document).ready(function(){
-    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
-        $('[data-toggle="tooltip"]').tooltip();
-    }
-    if ($('[data-toggle="popover"]').popover === 'function') {
-        $('[data-toggle="popover"]').popover();
-    }
-});
-</script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -309,224 +300,80 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 
-<h1 class="title toc-ignore">Tables</h1>
+<h1 class="title toc-ignore">Counters</h1>
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(whereami)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(kableExtra)</a></code></pre></div>
-<div id="html-footnote" class="section level2">
-<h2>HTML footnote</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(iris,<span class="dv">10</span>), <span class="dt">align =</span> <span class="st">&quot;c&quot;</span>,<span class="dt">format =</span> <span class="st">&#39;html&#39;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">footnote</span>(</a>
-<a class="sourceLine" id="cb2-3" title="3">    <span class="dt">general_title =</span> <span class="st">&quot;Source: &quot;</span>,</a>
-<a class="sourceLine" id="cb2-4" title="4">    <span class="dt">general =</span> <span class="kw">whereami</span>(<span class="dt">path_expand =</span> <span class="ot">TRUE</span>))</a></code></pre></div>
-<table>
-<thead>
-<tr>
-<th style="text-align:center;">
-Sepal.Length
-</th>
-<th style="text-align:center;">
-Sepal.Width
-</th>
-<th style="text-align:center;">
-Petal.Length
-</th>
-<th style="text-align:center;">
-Petal.Width
-</th>
-<th style="text-align:center;">
-Species
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-5.1
-</td>
-<td style="text-align:center;">
-3.5
-</td>
-<td style="text-align:center;">
-1.4
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4.9
-</td>
-<td style="text-align:center;">
-3.0
-</td>
-<td style="text-align:center;">
-1.4
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4.7
-</td>
-<td style="text-align:center;">
-3.2
-</td>
-<td style="text-align:center;">
-1.3
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4.6
-</td>
-<td style="text-align:center;">
-3.1
-</td>
-<td style="text-align:center;">
-1.5
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-5.0
-</td>
-<td style="text-align:center;">
-3.6
-</td>
-<td style="text-align:center;">
-1.4
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-5.4
-</td>
-<td style="text-align:center;">
-3.9
-</td>
-<td style="text-align:center;">
-1.7
-</td>
-<td style="text-align:center;">
-0.4
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4.6
-</td>
-<td style="text-align:center;">
-3.4
-</td>
-<td style="text-align:center;">
-1.4
-</td>
-<td style="text-align:center;">
-0.3
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-5.0
-</td>
-<td style="text-align:center;">
-3.4
-</td>
-<td style="text-align:center;">
-1.5
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4.4
-</td>
-<td style="text-align:center;">
-2.9
-</td>
-<td style="text-align:center;">
-1.4
-</td>
-<td style="text-align:center;">
-0.2
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-4.9
-</td>
-<td style="text-align:center;">
-3.1
-</td>
-<td style="text-align:center;">
-1.5
-</td>
-<td style="text-align:center;">
-0.1
-</td>
-<td style="text-align:center;">
-setosa
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; border: 0;" colspan="100%">
-<span style="font-style: italic;">Source: </span>
-</td>
-</tr>
-<tr>
-<td style="padding: 0; border: 0;" colspan="100%">
-<sup></sup> /private/var/folders/kx/t4h_mm1910sb7vhm_gnfnx2c0000gn/T/RtmpcyPykM/Rbuild10c4067b55e3a/whereami/vignettes/tables.Rmd
-</td>
-</tr>
-</tfoot>
-</table>
+<p><code>whereami</code> stores in counters when a <code>whereami</code> call was invoked in a script during a session. This information can be used in control reactivity in shiny app development and testing.</p>
+<p>Below shows the basics of accessing and controlling counters.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(whereami)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"></a>
+<a class="sourceLine" id="cb2-2" title="2">txt_<span class="dv">1</span> &lt;-<span class="st"> &quot;</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="st">whereami::cat_where(whereami::whereami(tag = &#39;tag1&#39;))</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb2-5" title="5"></a>
+<a class="sourceLine" id="cb2-6" title="6">txt_<span class="dv">2</span> &lt;-<span class="st"> &quot;whereami::cat_where(whereami::whereami(tag = &#39;tag2&#39;))&quot;</span></a>
+<a class="sourceLine" id="cb2-7" title="7"></a>
+<a class="sourceLine" id="cb2-8" title="8">tf_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">tempfile</span>(<span class="dt">fileext =</span> <span class="st">&#39;.R&#39;</span>)</a>
+<a class="sourceLine" id="cb2-9" title="9">tf_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">tempfile</span>(<span class="dt">fileext =</span> <span class="st">&#39;.R&#39;</span>)</a>
+<a class="sourceLine" id="cb2-10" title="10"></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="kw">cat</span>(txt_<span class="dv">1</span>,<span class="dt">file =</span> tf_<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-12" title="12"><span class="kw">cat</span>(txt_<span class="dv">2</span>,<span class="dt">file =</span> tf_<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">source</span>(tf_<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">source</span>(tf_<span class="dv">2</span>)</a></code></pre></div>
+<div id="query-counter-state" class="section level2">
+<h2>Query Counter State</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"></a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co"># All counters</span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">counter_state</span>()</a>
+<a class="sourceLine" id="cb4-4" title="4"></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co"># A single counter</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="kw">counter_state</span>(<span class="dt">tag =</span> <span class="st">&#39;tag1&#39;</span>)</a></code></pre></div>
+</div>
+<div id="accessing-counters" class="section level2">
+<h2>Accessing Counters</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co"># Counter names</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="kw">counter_names</span>()</a>
+<a class="sourceLine" id="cb5-4" title="4"></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co"># Counter tags</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="kw">counter_tags</span>()</a></code></pre></div>
+</div>
+<div id="retrieve-counters" class="section level2">
+<h2>Retrieve Counters</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">counters &lt;-<span class="st"> </span><span class="kw">counter_get</span>()</a>
+<a class="sourceLine" id="cb6-2" title="2"></a>
+<a class="sourceLine" id="cb6-3" title="3">counters</a></code></pre></div>
+</div>
+<div id="manipulating-counters" class="section level2">
+<h2>Manipulating Counters</h2>
+<p>Using <code>counter_reset</code> and <code>counter_state</code> in a loop</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span> ){</a>
+<a class="sourceLine" id="cb7-3" title="3"></a>
+<a class="sourceLine" id="cb7-4" title="4">  <span class="kw">source</span>(tf_<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb7-5" title="5">  <span class="kw">source</span>(tf_<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb7-6" title="6"></a>
+<a class="sourceLine" id="cb7-7" title="7">  <span class="cf">if</span>( <span class="kw">counter_state</span>(<span class="dt">tag =</span> <span class="st">&#39;tag1&#39;</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span> )</a>
+<a class="sourceLine" id="cb7-8" title="8">    <span class="kw">counter_reset</span>(<span class="dt">tag =</span> <span class="st">&#39;tag2&#39;</span>)</a>
+<a class="sourceLine" id="cb7-9" title="9">}</a></code></pre></div>
+</div>
+<div id="plot-method" class="section level2">
+<h2>Plot Method</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">plot</span>(<span class="kw">counter_get</span>())</a></code></pre></div>
+</div>
+<div id="json-logs" class="section level2">
+<h2>json logs</h2>
+<p>A json log of the counter is written to <code>file.path(tempdir(),&#39;whereami.json&#39;)</code> by default. The path can be set using <code>set_whereami_log()</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">jsonlite<span class="op">::</span><span class="kw">read_json</span>(</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">file.path</span>(<span class="kw">tempdir</span>(),<span class="st">&#39;whereami.json&#39;</span>),</a>
+<a class="sourceLine" id="cb9-3" title="3"><span class="dt">simplifyVector =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+</div>
+<div id="clear-all-counters" class="section level2">
+<h2>Clear all counters</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="kw">counter_reset</span>()</a></code></pre></div>
+<p>Verify that there are no active counters.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">counter_state</span>()</a></code></pre></div>
 </div>
 
 
