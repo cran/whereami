@@ -1,21 +1,21 @@
-## ---- include = FALSE----------------------------------------------------
+## ---- include = FALSE---------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 
-## ----setup---------------------------------------------------------------
+## ----setup--------------------------------------------------------------------
 library(whereami)
 library(ggplot2)
 
-## ----rmd caption,fig.cap=whereami(path_expand = TRUE),fig.width=7--------
+## ----rmd caption,fig.cap=whereami(path_expand = TRUE),fig.width=7-------------
 
 ggplot(iris) + 
   aes(x=Sepal.Length,y=Sepal.Width) + 
   geom_point()
 
 
-## ----ggcaption,fig.width=7-----------------------------------------------
+## ----ggcaption,fig.width=7----------------------------------------------------
 
 ggplot(iris) + 
   aes(x=Sepal.Length,y=Sepal.Width) + 
